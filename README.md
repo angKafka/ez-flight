@@ -1,6 +1,6 @@
 # ✈️ Flight Details Extractor using LLM (NER with `phi3:mini`)
 
-This project is a lightweight NLP microservice that uses a local LLM (`phi3:mini`) to extract flight booking details from user input in natural language.
+This project is a lightweight NLP microservice backend that uses a local LLM (`phi3:mini`) to extract flight booking details from user input in natural language.
 
 ## 🚀 Features
 
