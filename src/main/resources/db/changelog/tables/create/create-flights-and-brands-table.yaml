@@ -1,0 +1,74 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-brands-table
+      author: rdutta
+      changes:
+        - createTable:
+            tableName: brands
+            columns:
+              - column:
+                  name: brand_id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    unique: true
+              - column:
+                  name: brand_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: create-flights-table
+      author: rdutta
+      changes:
+        - createTable:
+            tableName: flights
+            columns:
+              - column:
+                  name: flight_id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    unique: true
+              - column:
+                  name: flight_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: from
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: to
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: start_time
+                  type: TIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: end_time
+                  type: TIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: brand_id
+                  type: INT
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: flights
+            baseColumnNames: brand_id
+            referencedTableName: brands
+            referencedColumnNames: brand_id
+            onDelete: CASCADE
+            constraintName: fk_flight_brand

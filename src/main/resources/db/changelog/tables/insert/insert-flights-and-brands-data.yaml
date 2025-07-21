@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 03-insert-brand-data
+      author: rdutta
+      changes:
+        - insert:
+            tableName: brands
+            columns:
+              - column: { name: brand_id, value: 1 }
+              - column: { name: brand_name, value: "Indigo" }
+        - insert:
+            tableName: brands
+            columns:
+              - column: { name: brand_id, value: 2 }
+              - column: { name: brand_name, value: "Air India" }
+
+  - changeSet:
+      id: 04-insert-flight-data
+      author: rdutta
+      changes:
+        - insert:
+            tableName: flights
+            columns:
+              - column: { name: flight_id, value: 1 }
+              - column: { name: flight_name, value: "Air India 101" }
+              - column: { name: from, value: "Delhi" }
+              - column: { name: to, value: "Mumbai" }
+              - column: { name: start_time, value: "09:00:00" }
+              - column: { name: end_time, value: "11:00:00" }
+              - column: { name: brand_id, value: 2 }
